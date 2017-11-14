@@ -1,14 +1,10 @@
 {
   "name": "bots-discord",
-  "version": "0.0.1",
-  "description": "asd",
+  "version": "1.0.0",
+  "description": "A wonderful playground of bots for Discord.",
   "main": "bots.js",
   "dependencies": {
     "discord.js": "^11.2.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,5 +15,5 @@
   "bugs": {
     "url": "https://github.com/nutiler/bots-discord/issues"
   },
-  "homepage": "https://github.com/nutiler/bots-discord#readme"
+  "homepage": "https://discord.gg/kZsknAF"
 }

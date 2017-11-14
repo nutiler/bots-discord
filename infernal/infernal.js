@@ -6,7 +6,6 @@ const bot = new Discord.Client({ disableEveryone: true });
 
 bot.on("ready", async() => {
     try {
-
         let link = await bot.generateInvite(["ADMINISTRATOR"]);
 
         console.log('--------------------------------- INFERNAL BOT -------------------------------');
@@ -27,6 +26,8 @@ bot.on("ready", async() => {
 
 });
 
+
+// set this up & add notes
 bot.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -121,7 +122,6 @@ bot.on("message", async message => {
             .setThumbnail("https://vignette.wikia.nocookie.net/2007scape/images/1/14/Infernal_cape.png/revision/latest?cb=20170603042039")
             .addField("Pricing", "For competitive rates please PM me, **Pink Clay#2390**")
             .addField("Inventory, use !inventory", "Gear can be substituted for cheaper alternatives. Twisted bow, Toxic Blowpipe (dragon darts), Rune Pouch (Death, Blood, Soul), Saradomin Godsword, Armadyl Chestplate, Armadyl Chainskirt, 9 Saradomin Brews, 10 Super Restores, 1 Ranging Potion, 1 Stamina Potion.")
-            // .attachFile("./assets/mains-inventory.jpg")
             .attachFile("./assets/mains-gear.jpg")
             .setFooter("Request a PM on Sythe before trades. - Pink Clay#2390", "http://www.sythe.org/js/favicon.png");
         message.channel.send(embed);
