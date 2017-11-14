@@ -2,4 +2,8 @@
 
 [discord.js](https://discord.js.org/#/)# bots-discord
 
-user keyword triggers, payments, inferno... ect
+Infernal Bot.
+
+Stormheart bot, depreciated uses discordie.
+
+planned? user keyword triggers, payments, inferno... ect
