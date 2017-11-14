@@ -50,7 +50,7 @@ bot.on('guildMemberAdd', member => {
         return x.indexOf(y) > -1;
     }
 
-    var bannednames = ["PinkCIay", "PinkC1ay", "PinkClay", "PInkClay", "PInkC1ay", "PInkClay", "P1nkClay", "P1nkCIay", "P1nkC1ay",
+    var bannednames = ["Plnk CLay", "PinkCIay", "PinkC1ay", "PinkClay", "PInkClay", "PInkC1ay", "PInkClay", "P1nkClay", "P1nkCIay", "P1nkC1ay",
         "P1nkClay", "PlnkClay", "PlnkCIay", "PlnkC1ay", "PlnkClay", "Infernal", "Infernai", "InfernaI", "Infernal", "Inferna1", "infernal",
         "infernaI", "infernai", "inferna1", "lnfernal", "lnfernai", "lnfernaI", "lnferna1", "lnferna1", "1nfernal", "1nfernai", "1nfernaI",
         "1nferna1", "InfernalBot", "InfernaiBot", "InfernaIBot", "InfernalBot", "Inferna1Bot", "infernalBot", "infernaIBot", "infernaiBot",
@@ -59,8 +59,13 @@ bot.on('guildMemberAdd', member => {
         "inferna1B0t", "lnfernalB0t", "lnfernaiB0t", "lnfernaIB0t", "lnferna1B0t", "lnferna1B0t", "1nfernalB0t", "1nfernaiB0t", "1nfernaIB0t",
         "1nferna1B0t"
     ];
+    
+    // console.log(member.displayName);
+    // console.log(member.displayName.replace(/[_ -]/g, ""));
+    // console.log(contains(bannednames, member.displayName.replace(/[_ -]/g, "")));
 
-    if (contains(member.displayName.replace(/[_ -]/g, ""), bannednames)) {
+
+    if (contains(bannednames, member.displayName.replace(/[_ -]/g, ""))) {
 
         let pm = new Discord.RichEmbed()
             .setColor("#762928")
@@ -83,18 +88,39 @@ bot.on('guildMemberAdd', member => {
             .setFooter("Request a PM on Sythe before trades. - Pink Clay#2390", "http://www.sythe.org/js/favicon.png");
         channel.send(imposter);
 
-        member.ban(0);
+        setTimeout(() => {
+            member.ban(0);
+        }, 3000);
+
     }
     else {
-        let channel = bot.channels.get(botSettings.channelID);
-        let join = new Discord.RichEmbed()
-            .setColor("#762928")
-            .setURL("https://www.sythe.org/threads/1k-vouches-teamviewer-infernal-cape-service-pures-zerk-mains/")
-            .setAuthor(`Welcome, ${member.displayName}!`)
-            .setDescription("to Pink Clay's Infernal & Fire Cape services!\n")
-            .setThumbnail("https://vignette.wikia.nocookie.net/2007scape/images/e/ea/Tzrek-jad.png/revision/latest?cb=20170616214946")
-            .setFooter("Request a PM on Sythe before trades. - Pink Clay#2390", "http://www.sythe.org/js/favicon.png");
-        channel.send(join);
+        
+        setTimeout(() => {
+            let channel = bot.channels.get(botSettings.channelID);
+            let join = new Discord.RichEmbed()
+                .setColor("#762928")
+                .setURL("https://www.sythe.org/threads/1k-vouches-teamviewer-infernal-cape-service-pures-zerk-mains/")
+                .setAuthor(`Welcome, ${member.displayName}!`)
+                .setDescription("to Pink Clay's Infernal & Fire Cape services!\n")
+                .setThumbnail("https://vignette.wikia.nocookie.net/2007scape/images/e/ea/Tzrek-jad.png/revision/latest?cb=20170616214946")
+                .setFooter("Request a PM on Sythe before trades. - Pink Clay#2390", "http://www.sythe.org/js/favicon.png");
+            channel.send(join);
+
+            let pm = new Discord.RichEmbed()
+                .setColor("#762928")
+                .setURL("https://www.sythe.org/threads/1k-vouches-teamviewer-infernal-cape-service-pures-zerk-mains/")
+                .setAuthor("Welcome to Pink Clay's Infernal & Fire Capes")
+                .setDescription("Please click the link above to view the Sythe.org thread.\n")
+                .addField("Imposters", "Due to an increase in imposters on Discord, **ALWAYS** request a private message from me on Sythe.org\n\n**Pink Clay#2390** with an **ADMIN** role is my only discord.\n")
+                .addField("Warning", "Do **NOT** provide any information on discord. Only use a verified Sythe PM from me for trades.")
+                .addField("Trading", "Always request my RSN before trades so you can confirm it is me.")
+                .addField("Rules", "Please do not spam or advertise, impersonate staff, and stay on topic.\n")
+                .addField("Discord", "https://discord.gg/nea8DD is the only official server.")
+                .setThumbnail("https://vignette.wikia.nocookie.net/2007scape/images/1/14/Infernal_cape.png/revision/latest?cb=20170603042039")
+                .setFooter("Request a PM on Sythe before trades. - Pink Clay#2390", "http://www.sythe.org/js/favicon.png");
+            member.send(pm);
+            
+        }, 4000);
     }
 });
 
@@ -149,7 +175,7 @@ bot.on("message", async message => {
             .setFooter("Request a PM on Sythe before trades. - Pink Clay#2390", "http://www.sythe.org/js/favicon.png");
         message.channel.send(embed);
     }
-    
+
     if (command === `${prefix}skype`) {
         let embed = new Discord.RichEmbed()
             .setColor("#762928")
@@ -255,6 +281,7 @@ bot.on("message", async message => {
             // .addField("!clear {amount}", "Deletes message history.") //done
             // .addField("!join {username}", "Posts the welcome message.") // done
             // .addField("!help", "Display this menu.") //done
+            .setFooter("Bot Creator - Nutiler#8200", "http://www.sythe.org/js/favicon.png")
             .setThumbnail("https://vignette.wikia.nocookie.net/2007scape/images/e/ea/Tzrek-jad.png/revision/latest?cb=20170616214946");
         message.channel.send(embed);
 
